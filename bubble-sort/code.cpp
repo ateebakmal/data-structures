@@ -50,11 +50,13 @@ void adaptive_bubble_sort(int array[] , int size){
 
 }
 
+
 //Function that prints the array
 void print_array(int array[] , int size){
    for(int i = 0; i < size; i++){
       std::cout<< array[i] << ",";
    }
+   std::cout<<'\n';
 }
 
 int main(){
@@ -63,8 +65,6 @@ int main(){
    int size = 5;
    
    adaptive_bubble_sort(unordered_array, size);
-
-   //printing the array
    print_array(unordered_array, size);
    return 0;
 }
