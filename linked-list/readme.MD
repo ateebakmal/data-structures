@@ -9,3 +9,26 @@ In simple words, a linked list consists of nodes where each node contains a data
  - data 
  - link to the next node
 2. Next - This points to the next node/element in the linked list (since they are not stored in a contiguous memory locations)
+
+
+### Following are the standard Linked List Operations - 
+1. Traversing a linked list.
+2. Append a new node (to the end) of a list
+3. Prepend a new node (to the beginning) of the list
+4. Inserting a new node to a specific position on the list
+5. Deleting a node from the list
+
+
+### Types of Linked List -
+1. Singly Linked List
+2. Doubly Linked List
+3. Circular Linked List
+
+### Applications of Linked List - 
+1. Linked Lists can be used to implement Stacks , Queues.
+2. Linked Lists can also be used to implement Graphs. (Adjacency list representation of Graph).
+3. Implementing Hash Tables :- Each Bucket of the hash table can itself be a linked list. (Open chain hashing).
+4. Undo functionality in Photoshop or Word . Linked list of states
+
+#### For seeing more on applications of linked list:
+https://www.quora.com/What-is-an-application-of-linear-linked-list-data-structures
