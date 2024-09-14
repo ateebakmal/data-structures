@@ -32,3 +32,7 @@ In simple words, a linked list consists of nodes where each node contains a data
 
 #### For seeing more on applications of linked list:
 https://www.quora.com/What-is-an-application-of-linear-linked-list-data-structures
+
+
+#### For understanding linkedList
+GeekForGeeks : https://www.geeksforgeeks.org/singly-linked-list-tutorial/
