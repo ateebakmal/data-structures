@@ -1,67 +1,91 @@
 #include <iostream>
 using namespace std;
 
-struct Node{
-   int data;
-   Node* next;
-};
-
-//method to create a node
-Node* createNode(int data){
-   Node* node = new Node;
-   node->data = data;
-   node->next = nullptr;
-   return node;
-}
-
-//function that creates a node at the start
-void insertAtBeginning(Node*& head , int data){
-   Node* newNode = createNode(data);
-   newNode->next = head;
-   head = newNode;  
-}
-
-//function that inserts at the end
-void insertAtEnd(Node* head, int data){
-   Node* newNode = createNode(4);
-
-   if(head == nullptr){
-      head->next = newNode;
-      return;
+double calculateAverage(int array[], int size){
+   double sum = 0;
+   for(int i = 0; i < size; i++){
+      sum += array[i];
    }
 
-   Node* current = head;
-   while(current != nullptr){
-      current = current->next;
+   return sum / (double)size;
+}
+
+char findGrade(double average){
+   if (average >= 85) return 'A';
+    if (average >= 70) return 'B';
+    if (average >= 60) return 'C';
+    if (average >= 50) return 'D';
+    return 'F';
+}
+
+void arraysUnion (int arr1[], int arr1Size ,int arr2[], int arr2Size, int newArray[]){
+
+   int i = 0;
+   for(int j = 0; j < arr1Size; j++){
+      newArray[i++] = arr1[j];
    }
 
-   current->next = newNode;
-
+   for(int j = 0; j < arr2Size; j++){
+      newArray[i++] = arr2[j];
+   }  
 }
-//function that prints all the node
-void printNodes(Node* head){
-   Node* current = head;
 
-   while(current != nullptr){
-      //printing current value
-      cout << current -> data << " -> ";
-      
-      //updating current pointer
-      current = current -> next;
+void print(int arr[], int size){
+   for(int i = 0; i < size; i++){
+      cout << arr[i] << ",";
+   }
+   cout << endl;
+}
+
+void mergeSortedArrays(int arr1[], int arr1size, int arr2[], int arr2size , int mergedArray[]){
+
+   int i = 0, j = 0, k = 0;
+
+   //keep merging until one of the array is exhausted
+  while(i < arr1size && j < arr2size){
+      if(arr1[i] < arr2[j]){
+         mergedArray[k++] = arr1[i++];
+      }else{
+         mergedArray[k++] = arr2[j++];
+      }
+  }
+      //add the elements of remaining array
+   while(i < arr1size){
+      mergedArray[k++] = arr1[i++];
    }
 
-   cout << "nullptr"<<endl;
+   while(j < arr2size){
+      mergedArray[k++] = arr2[j++];
+   }
+  
 }
-int main(){
-   Node* head = nullptr;
 
+float max(float arr[], int size){
+   float max = -99999;
+
+   for(int i = 0; i < size; i++){
+      max = (arr[i] > max)? arr[i]: max;
+   }
+
+   return max;
+}
+
+float calculateAverageMarks(int marks[], int totalStudents, int totalMarks){
+
+   float sum = 0;
+   totalMarks = totalMarks * totalStudents;
+   for(int i = 0; i < totalStudents; i++){
+      sum += marks[i];
+   }
+
+   return sum / totalStudents;
    
-   insertAtBeginning(head, 1);
-   printNodes(head);
+}
 
-   cout<<"Inserting 2 at start"<<endl;
+int main(){
+   int temps[] = {11, 11,12,13,14,11,15,14,15,15};
 
-   insertAtBeginning(head , 2);
-   printNodes(head);
+
+   cout << "Average Marks of class is : "<<calculateAverageMarks(temps , 10,15);
    return 0;
 }
