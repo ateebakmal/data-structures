@@ -37,7 +37,53 @@ void insertAtEnd(groceryNode*& head , string name, int price){
    current->next= newNode;
 }
 
+void displayNodes(groceryNode* head){
+   while(head != nullptr){
+      cout << head->itemName << " : " << head->price << " -> "; 
+      head = head->next;
+   }
 
+   cout << endl;
+}
+
+
+void separateEvenAndOdd(groceryNode*& head){
+   groceryNode* current = head;
+
+   groceryNode* evenHead = nullptr;
+   groceryNode* evenTail = nullptr;
+   groceryNode* oddHead = nullptr;
+   groceryNode* oddTail = nullptr;
+
+   while(current != nullptr){
+      groceryNode* newNode = createNode(current->itemName , current->price);
+      if(current->price % 2 == 0){
+
+         if(!evenHead){
+            evenHead = newNode;
+            evenTail = newNode;
+         }else{
+            evenTail->next = newNode;
+            evenTail = newNode;
+         }
+      }else{
+         if(!oddHead){
+            oddHead = oddTail = newNode;
+         }else{
+            oddTail->next = newNode;
+            oddTail = newNode; 
+         }
+      }
+      current = current->next;
+   }
+
+   cout << "Even groceries : \n";
+   displayNodes(evenHead);
+
+   cout << "Odd groceries : \n";
+   displayNodes(oddHead);
+
+}
 
 int main(){
 

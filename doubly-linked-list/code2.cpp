@@ -220,6 +220,15 @@ void deleteDoublyLinkedList(Node*& head){
    head = nullptr;
 }
 
+
+int findMiddle(Node* head){
+   int len = 0;
+   while(head->next != nullptr){
+      len++;
+   }
+   return ++len / 2;
+}
+
 void reverseDoublyLinkedList(Node*& head){
    Node* current = head;
    while(current->next != nullptr){
@@ -237,7 +246,6 @@ void reverseDoublyLinkedList(Node*& head){
    temp->prev = temp->next;
    temp->next = x;
 }
-
 void swap(Node*& head, int val1, int val2){
    Node* v1 = nullptr;
    Node* v2 = nullptr;
@@ -266,60 +274,71 @@ void swap(Node*& head, int val1, int val2){
 }
 int main(){
    Node* head = nullptr;
-   insertAtBeginning(head , 20);
+   // insertAtBeginning(head , 20);
+   // // displayNodes(head);
+
+   // insertAtBeginning(head , 10);
+   // // displayNodes(head);
+
+   // insertAtEnd(head , 30);
+   // // displayNodes(head);
+
+   // insertAt(head, 50, 0);
+   // // displayNodes(head);
+
+   // insertAt(head , 60 , 3);
+   // // displayNodes(head);
+
+   // insertAt(head, 90, 3);
+   // // displayNodes(head);
+
+   // insertAt(head, 40, 9);
+
+   // insertAfter(head, 45, 90);
+   // // displayNodes(head);
+
+   // // insertAfter(head , 90,50);
+   // // displayNodes(head);
+
+   // // insertAfter(head, 10, 999);
+   // insertAfter(head, 69, 60);
+
+   // insertBefore(head, 3, 45);
+   // insertBefore(head,1, 50);
    // displayNodes(head);
 
-   insertAtBeginning(head , 10);
+   // // deleteHead(head);
+   // // displayNodes(head);
+
+   // // deleteNode(head, 50);
+   // // cout << "Deleting head node\n";
+   // // displayNodes(head);
+
+   // // deleteNode(head,69);
+   // // cout << "Deleting Tail node\n";
+   // // displayNodes(head);
+
+   // // deleteNode(head,3);
+   // // cout << "Deleting 3rd node\n";
+   // // displayNodes(head);
+
+   // cout << "reversing list\n";
+   // reverseDoublyLinkedList(head);
    // displayNodes(head);
 
-   insertAtEnd(head , 30);
+   // cout << "swapping\n";
+   // swap(head,45,30);
    // displayNodes(head);
 
-   insertAt(head, 50, 0);
-   // displayNodes(head);
-
-   insertAt(head , 60 , 3);
-   // displayNodes(head);
-
-   insertAt(head, 90, 3);
-   // displayNodes(head);
-
-   insertAt(head, 40, 9);
-
-   insertAfter(head, 45, 90);
-   // displayNodes(head);
-
-   // insertAfter(head , 90,50);
-   // displayNodes(head);
-
-   // insertAfter(head, 10, 999);
-   insertAfter(head, 69, 60);
-
-   insertBefore(head, 3, 45);
-   insertBefore(head,1, 50);
+   insertAtBeginning(head,9);
+   insertAtBeginning(head,7);
+   insertAtBeginning(head,5);
+   insertAtBeginning(head,3);
+   insertAtBeginning(head,1);
    displayNodes(head);
-
-   deleteHead(head);
-   displayNodes(head);
-
-   deleteNode(head, 50);
-   cout << "Deleting head node\n";
-   displayNodes(head);
-
-   deleteNode(head,69);
-   cout << "Deleting Tail node\n";
-   displayNodes(head);
-
-   deleteNode(head,3);
-   cout << "Deleting 3rd node\n";
-   displayNodes(head);
-
-   cout << "reversing list\n";
+   
+   cout << "reversing " << endl;
    reverseDoublyLinkedList(head);
-   displayNodes(head);
-
-   cout << "swapping\n";
-   swap(head,45,30);
    displayNodes(head);
    return 0;
 }
