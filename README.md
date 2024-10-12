@@ -21,6 +21,6 @@ Will add more data structures from time to time.
   </tr>
   <tr>
     <td>Destructors</td>
-    <td>See destructors.md/<td>
+    <td>https://github.com/ateebakmal/data-structures/blob/main/Destructors.md<td>
   </tr>
 </table>
