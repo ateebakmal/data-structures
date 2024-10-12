@@ -61,7 +61,7 @@ class Stack{
             cout << "Stack is empty" << endl;
             return;
          }
-         for(int i = this->size() - 1; i >= 0; i--){
+         for(int i = this->getSize() - 1; i >= 0; i--){
             cout << "| ";
             cout << arr[i] << " |" << endl;
          }

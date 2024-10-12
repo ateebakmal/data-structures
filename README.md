@@ -15,4 +15,8 @@ Will add more data structures from time to time.
     <td>Hashmaps</td>
     <td>https://www.w3schools.com/dsa/dsa_data_hashmaps.php</td>
   </tr>
+  <tr>
+    <td>Queue</td>
+    <td>https://www.geeksforgeeks.org/queue-data-structure/<td>
+  </tr>
 </table>

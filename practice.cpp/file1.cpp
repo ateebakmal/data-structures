@@ -83,9 +83,9 @@ float calculateAverageMarks(int marks[], int totalStudents, int totalMarks){
 }
 
 int main(){
-   int temps[] = {11, 11,12,13,14,11,15,14,15,15};
 
-
-   cout << "Average Marks of class is : "<<calculateAverageMarks(temps , 10,15);
+   string s = "ateeb";
+   s += 'a';
+   cout << s;
    return 0;
 }
