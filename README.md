@@ -19,4 +19,8 @@ Will add more data structures from time to time.
     <td>Queue</td>
     <td>https://www.geeksforgeeks.org/queue-data-structure/<td>
   </tr>
+  <tr>
+    <td>Destructors</td>
+    <td>See destructors.md/<td>
+  </tr>
 </table>
