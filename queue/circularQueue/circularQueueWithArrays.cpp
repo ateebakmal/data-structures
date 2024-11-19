@@ -50,7 +50,7 @@ class Queue{
 
       //Helper methods
       bool isFull(){
-         return (rear + 1) % this->length ==  this->front; 
+         return (rear + 1) % this->length ==  this->front; v
       }
 
       bool isEmpty(){

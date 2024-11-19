@@ -1,4 +1,8 @@
 #include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <cctype>
+#include <stack>
 using namespace std;
 
 double calculateAverage(int array[], int size){
@@ -82,10 +86,141 @@ float calculateAverageMarks(int marks[], int totalStudents, int totalMarks){
    
 }
 
-int main(){
+int maxArea(vector<int>& height) {
+        int max = 0;
 
-   string s = "ateeb";
-   s += 'a';
-   cout << s;
+        int left = 0;
+        int right = height.size() - 1;
+
+        while(left != right){
+            int product = height[left] * height[right];
+            cout << product << endl;
+            if( product > max){
+                max = product;
+            }
+
+            if(height[left] < height[right]){
+                ++left;
+            }else{
+                ++right;
+            }
+        } 
+        return max;
+    }
+
+
+bool isValidSudoku(vector<vector<char>>& board) {
+        
+        unordered_map<char, int> dict;
+
+        //traverse through each row
+        for(int row = 0; row < board.size(); row++){
+            for(int col = 0; col < board[row].size(); col++){
+                char number = board[row][col];
+                //Check if char is digit and in dict
+                if(isdigit(number && dict.find(number) == dict.end())){
+                    dict[number] = 1;
+                }else if(isdigit(number) && dict.find(number) != dict.end()){
+                    return false;
+                }
+
+            }
+            dict.clear();
+        }
+
+        //Traverse through each column
+        for(int col = 0; col < board[0].size(); col++){
+            for(int row = 0; row < board.size(); row++){
+                char number = board[row][col];
+                //Check if char is digit and in dict
+                if(isdigit(number && dict.find(number) == dict.end())){
+                    dict[number] = 1;
+                }else if(isdigit(number) && dict.find(number) != dict.end()){
+                    return false;
+                }
+            }
+            dict.clear();
+        }
+
+        int i = 0;
+        int j = 0;
+        //Traverse in a 3 by 3 block
+        for(int x = 1; x <= 9; x++){
+        
+            while(i < i+3){
+                while(j < j+3){
+                    char number = board[i][j];
+                    //Check if char is digit and in dict
+                    if(isdigit(number && dict.find(number) == dict.end())){
+                        dict[number] = 1;
+                    }else if(isdigit(number) && dict.find(number) != dict.end()){
+                        return false;
+                    }
+                }
+            }
+
+            i+=3;
+            j+=3;
+
+        }
+    return true;
+    }
+
+    void performCalculation(int& result , int num1 , int num2, std::string op){
+        if(op == "+"){
+            result = num1 + num2;
+        }else if(op == "-"){
+            result = num1 - num2;
+        }else if(op == "/"){
+            result = num1 / num2;
+        }else if(op == "*"){
+            result = num1 * num2;
+        }
+    }
+
+    void performCalculation(int& result, int num , std::string op){
+        
+        if(op == "+"){
+            result = num + result;
+        }else if(op == "-"){
+            result = num - result;
+        }else if(op == "/"){
+            result = num / result;
+        }else if(op == "*"){
+            result = num * result;
+        }
+    }
+
+    int evalRPN(vector<string>& tokens) {
+        stack<int> stack;
+
+        int result = 0;
+
+        for(string i : tokens){
+            cout << "i = " << i << endl;
+            //Check if i is number or not
+            if(i != "+" && i != "-" && i != "/" && i != "*"){
+                stack.push(std::stoi(i));
+            }else{
+
+                if(result == 0){
+                    int x = stack.top(); stack.pop();
+                    int y = stack.top(); stack.pop();
+                    performCalculation(result , x , y , i);
+                }else{
+                    int x = stack.top(); stack.pop();
+                    performCalculation(result , x , i);
+                }
+
+            }
+
+        }
+        return result;
+    }
+int main(){
+    vector<string> x = {"2", "1", "+", "3", "*"};
+
+    cout << evalRPN(x);
+   
    return 0;
 }
