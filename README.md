@@ -27,5 +27,9 @@ Will add more data structures from time to time.
     <td>Buffer (Not a data strucuture)</td>
     <td>https://www.tutorchase.com/answers/a-level/computer-science/what-s-the-role-of-a-buffer-in-computer-architecture<td>
   </tr>
+   <tr>
+    <td>AVL Trees</td>
+    <td>https://www.tutorchase.com/answers/a-level/computer-science/what-s-the-role-of-a-buffer-in-computer-architecture](https://www.w3schools.com/dsa/dsa_data_avltrees.php)<td>
+  </tr>
   
 </table>
