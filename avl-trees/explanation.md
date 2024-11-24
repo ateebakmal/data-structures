@@ -1,6 +1,3 @@
-# Code files explanation.
-
-All of the code of the AVL Class is in AVL.h. AVL.cpp is a runner class to test the data structure
 
 <h1>  Code Explanation: </h1>
 
