@@ -27,25 +27,32 @@ private:
     }
 
     void heapifyDown(int index){
+        //Recursive method that makes sure the heap property is maintained by swapping elements
+
         int leftChild = (index * 2) + 1;
         int rightChild = (index * 2) + 2;
 
         int smallest = index;
 
+        //Check if left child is within array AND if left child is smaller than our index
         if(leftChild < array.size() && array[leftChild] < array[smallest]){
             smallest = leftChild;
         }
 
+        //Check if right child is within array AND if right child is smaller than current smallest (could be left child or index)
         if(rightChild < array.size() && array[rightChild] < array[smallest]){
             smallest = rightChild;
         }
 
-        //Edge case
+        //Edge case: returns if left and right child are both greater than our index or if left and right are outside of our array
         if(smallest == index){
             return;
         }
 
+        //Swap elements
         swap(array[index], array[smallest]);
+
+        //Recursive call
         heapifyDown(smallest);
     }
 public:
